@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <script src="https://unpkg.com/vue@3"></script>
+		<meta charset="utf-8">
+		<title>Turismo</title>
+	</head>
+	<body>
+		<div id="app">
+			{{ message }}
+			<h1>Turismo</h1>
+			<img src="https://www.nomada.news/wp-content/uploads/2018/09/turismo-monterrey-viajeros.jpg" width="1100" height="700">
+			<hr>
+			<p>
+				This page shows content about tourismus in Monterrey.
+			</p>
+			<div>
+				Do you want to explore Monterrey?<br>
+				Then let's show you some different activities to do and placese to visite!
+				<ul>
+					<li>Hikking</li>
+					<li>Mexican Kitchen</l>
+					<li>Carne Assada</li>
+					<li>Dancing/ Music</li>
+				</ul>
+			</div><br>
+			<button onclick="tipp()">
+				Tipp
+			</button>
+
+			<h3>
+				5.1 Condicional (v-if) 
+			</h3>
+			<p v-if="show">v-if statement example</p>
+			<p v-else="show">else ...</p>
+			<button @click="show = !show">press Me</button>
+			</button>
+
+			<h3>
+				5.2 Loop (v-for)  
+			</h3>
+			<ul>
+				<li v-for="month in monthsOfYear">{{ month }}</li>
+			</ul>
+
+			<h3>
+				5.3 User Input  (v-on:click)
+			</h3>
+  			<div>
+    		<h4>{{message2}}</h4>
+    			<button v-on:click="message2 += ' Add'">Add</button>
+  			</div>
+
+			<h3>
+				5.4 User Input (v-model)
+			</h3>
+			<p>Message is: {{ message }}</p>
+			<input v-model="message" placeholder="edit me" />
+			
+			<hr>
+        </div>
+
+<footer>
+	&copy; 2022 a01760042@tec.mx
+</footer>
+        <script>
+            Vue.createApp({
+                data() {
+                    return {
+						message: 'Hello Vue!',
+						message2: '',
+						show: true,
+						monthsOfYear: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','November','Dezember']
+					}
+				}
+            }).mount('#app')
+        </script>
+		<script src="app.js"></script>
+	</body>
+</html>
+
